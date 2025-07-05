@@ -16,7 +16,7 @@ const App = () => {
         
       })
       .catch(err => console.error('Error fetching URLs:', err));
-  }, [setFullUrl]);
+  }, [urlList]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

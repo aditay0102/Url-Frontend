@@ -16,7 +16,7 @@ const App = () => {
         
       })
       .catch(err => console.error('Error fetching URLs:', err));
-  }, [urlList]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +26,10 @@ const App = () => {
       console.log(res.data);
       setUrlList(prev => [...prev, newUrl]);
       setFullUrl('');
+      window.location.reload();
     } catch (error) {
       console.error('Shortening failed:', error);
+      alert(error);
     }
   };
 
